@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTDOWN</title>
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="stylesheet" href="count.css">
+</head>
+<body>
+    <div class="wrapper">
+        <main>
+            <h1>WE'RE LAUNCHING SOON</h1>
+            <div class="count">
+                <div class="time">
+                    <div class="days">
+                        <h2 id="days">00</h2>
+                    </div>
+                    <h3>DAYS</h3>
+                </div>
+                <div class="time">
+                    <div class="hours">
+                        <h2 id="hours">00</h2>
+                    </div>
+                    <h3>HOURS</h3>
+                </div>
+                <div class="time">
+                    <div class="minutes">
+                        <h2 id="minutes">00</h2>
+                    </div>
+                    <h3>MINUTES</h3>
+                </div>
+                <div class="time">
+                    <div class="seconds">
+                        <h2 id="seconds">00</h2>
+                    </div>
+                    <h3>SECONDS</h3>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="#"><img src="icon-facebook.svg" alt="faceboook"></a></li>
+            <li><a href="#"><img src="icon-pinterest.svg" alt="faceboook"></a></li>
+            <li><a href="#"><img src="icon-instagram.svg" alt="faceboook"></a></li>
+        </ul>
+    </footer>
+</body>
+<script> 
+    var target= new Date("Nov 20, 2025 13:18:00").getTime();
+    var i=setInterval(function(){
+        var current=new Date().getTime();
+        var distance= target-current;
+        var days=Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML=days;
+        document.getElementById("hours").innerHTML=hours;
+        document.getElementById("minutes").innerHTML=minutes;
+        document.getElementById("seconds").innerHTML=seconds;
+    })
+</script>
+</html>
